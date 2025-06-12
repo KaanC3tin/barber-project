@@ -26,6 +26,7 @@ const ContactForm = () => {
                 alert("Bir hata oluştu. Lütfen tekrar deneyin.");
             }
         } catch (error) {
+            console.error("Hata:", error)
             alert("Bağlantı hatası. Lütfen daha sonra tekrar deneyin.");
         } finally {
             setIsSubmitting(false);

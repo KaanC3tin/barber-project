@@ -36,7 +36,7 @@ const Footer = () => {
                                 </Link>
                             </div>
                             <p className="mt-4 text-white text-lg font-playfair italic tracking-wide">
-                                "Her kesimde ustalık. Geleneksel berberlik sanatını modern tekniklerle birleştiriyoruz. Profesyonel hizmet, kaliteli ürünler ve müşteri memnuniyeti önceliğimiz."
+                                “ Her kesimde ustalık. Geleneksel berberlik sanatını modern tekniklerle birleştiriyoruz. Profesyonel hizmet, kaliteli ürünler ve müşteri memnuniyeti önceliğimiz.”
                             </p>
                         </div>
 
