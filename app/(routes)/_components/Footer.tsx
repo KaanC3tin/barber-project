@@ -6,7 +6,8 @@ import React from 'react'
 const Footer = () => {
     return (
         <footer
-            className="relative bg-black bg-cover bg-center bg-no-repeat"
+            className="relative bg-black bg-cover bg-no-repeat"
+            // bg-center çıkarıldı
             style={{
                 backgroundImage: "url('/images/slider/footer.png')",
                 filter: "blur(0.3px)"
@@ -61,9 +62,24 @@ const Footer = () => {
                             </div>
                         ))}
                     </div>
+                    <div className="w-full h-[400px]">
+                        {/* <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d325.2692951995178!2d29.08875149450915!3d37.75112343577622!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4b21b5c2ae4b10aa!2sKerem%20Atalay%20Boutique%20Barber!5e0!3m2!1str!2str!4v1673875838719!5m2!1str!2str"
+                           
+                        ></iframe> */}
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7494.3875911885525!2d29.11075459290044!3d37.83684302058404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c715b3e6275289%3A0xd07e2e5ffb29ef9f!2sLaodikeia%20Antik%20Kenti!5e0!3m2!1str!2str!4v1749705452183!5m2!1str!2str"
+                            width="100%"
+                            height="100%"
+                            allowFullScreen
+                            loading="lazy"
+                            style={{ border: 1 }}
+                        // referrerPolicy="no-referrer-when-downgrade" //? ?
+                        />
+                    </div>
+
 
                     {/* Bottom Section */}
-                    <div className="border-t border-gray-600">
+                    <div className="border-t border-gray-100">
                         <div className="py-6 md:py-8">
                             <p className="text-xs md:text-sm text-gray-400 text-center">
                                 © 2025 Kaan Çetin. Tüm Hakları Saklıdır.

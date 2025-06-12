@@ -1,18 +1,224 @@
+// "use client";
+// import Image from 'next/image';
+// import React from 'react';
+// import { usePathname } from 'next/navigation';
+// import { motion } from 'framer-motion';
+
+// const About = () => {
+//     const pathname = usePathname()
+//     const isAboutPage = pathname === '/hakkimizda'
+//     const isHomePage = pathname === '/'
+
+//     const ParallaxHeroSection = () => {
+//         return (
+//             <div className='pt-[96px]'>
+//                 <div className='relative h-[45vh] bg-cover bg-center bg-fixed mb-16 w-full'
+//                     style={{ backgroundImage: "url('/images/slider/barber-service-4.jpg')" }}>
+//                     <div className='absolute inset-0 bg-black/50 z-10' />
+//                     <div className="absolute inset-0 z-20 flex items-center justify-center">
+//                         <div className="relative">
+//                             <h1 className="text-8xl md:text-9xl font-black text-white/15 select-none tracking-wider">
+//                                 Hakkımızda
+//                             </h1>
+//                             <h1 className="absolute inset-0 flex items-center justify-center text-6xl md:text-5xl font-bold text-white tracking-wide">
+//                                 Hakkımızda
+//                             </h1>
+//                         </div>
+//                     </div>
+//                 </div>
+//             </div>
+//         );
+//     }
+
+//     const HomeTitleSide = () => {
+//         return (
+//             <div className="relative py-10">
+//                 <h1 className="text-8xl md:text-9xl font-black text-white/15 select-none tracking-wider text-center">
+//                     Hakkımızda
+//                 </h1>
+//                 <h1 className="absolute inset-0 flex items-center justify-center text-6xl md:text-5xl font-bold text-white tracking-wide">
+//                     Hakkımızda
+//                 </h1>
+//             </div>
+//         )
+//     }
+
+//     return (
+//         <>
+//             {isAboutPage && <ParallaxHeroSection />}
+//             {isHomePage && <HomeTitleSide />}
+
+//             <div className='min-h-min bg-gray-900'>
+//                 {/* Ana Hikaye Bölümü */}
+//                 <div className='px-4 md:px-32 lg:px-64 pb-20'>
+//                     <div className='text-white flex items-center justify-center'>
+//                         <div className='w-full flex flex-col lg:flex-row items-center justify-center gap-12'>
+//                             {/* Images Section */}
+//                             <div className="w-full lg:w-[45%] relative">
+//                                 <div className="relative">
+//                                     <div className="relative z-10">
+//                                         <Image
+//                                             src="/images/slider/barber-3.jpg"
+//                                             alt='Profesyonel Saç Kesimi'
+//                                             height={500}
+//                                             width={400}
+//                                             className='object-cover object-center rounded-lg shadow-2xl w-full h-[400px]'
+//                                         />
+//                                     </div>
+//                                     <div className="absolute -bottom-8 -left-8 z-20 border-4 border-white rounded-lg overflow-hidden shadow-2xl">
+//                                         <Image
+//                                             src="/images/slider/1.jpg"
+//                                             alt='Berber Salonu Atmosferi'
+//                                             height={250}
+//                                             width={200}
+//                                             className='object-cover object-center w-[200px] h-[250px]'
+//                                         />
+//                                     </div>
+//                                     <div className="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"></div>
+//                                 </div>
+//                             </div>
+
+//                             {/* Content Section */}
+//                             <div className="w-full lg:w-[55%] pl-0 lg:pl-8">
+//                                 <div className="space-y-6">
+//                                     <div className="relative">
+//                                         <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+//                                             Geleneksel Ustalık,
+//                                             <span className="text-amber-400"> Modern Yaklaşım</span>
+//                                         </h2>
+//                                     </div>
+
+//                                     <div className="space-y-4 text-gray-300 leading-relaxed">
+//                                         <p className="text-lg">
+//                                             15 yılı aşkın deneyimimizle, saç kesimi ve bakım konusunda
+//                                             kendimizi sürekli geliştiriyoruz. Her müşterimize özel yaklaşım
+//                                             sergileyerek, kişisel tarzınızı en iyi şekilde yansıtacak
+//                                             kesimler sunuyoruz.
+//                                         </p>
+//                                         <p>
+//                                             Klasik berberlik tekniklerini modern trendlerle harmanlayarak,
+//                                             size en uygun görünümü yakalıyoruz. Hijyen ve kalite standartlarımız
+//                                             ile güvenli bir ortamda hizmet veriyoruz.
+//                                         </p>
+//                                     </div>
+
+//                                     <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700">
+//                                         <div>
+//                                             <h4 className="text-2xl font-bold text-amber-400">15+</h4>
+//                                             <p className="text-sm text-gray-400 uppercase tracking-wide">Yıl Deneyim</p>
+//                                         </div>
+//                                         <div>
+//                                             <h4 className="text-2xl font-bold text-amber-400">1000+</h4>
+//                                             <p className="text-sm text-gray-400 uppercase tracking-wide">Mutlu Müşteri</p>
+//                                         </div>
+//                                     </div>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 {/* Hikayemiz Bölümü */}
+//                 <div className="px-4 md:px-32 lg:px-64 py-20 bg-gray-800">
+//                     <div className="max-w-4xl mx-auto text-center">
+//                         <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+//                             <span className="text-amber-400">Hikayemiz</span>
+//                         </h3>
+//                         <div className="text-gray-300 space-y-6 text-lg leading-relaxed">
+//                             <p>
+//                                 2008 yılında büyük bir tutkuyla başladığımız bu yolculuk, sadece saç kesmekten çok daha fazlasını ifade ediyor.
+//                                 Usta Mehmet Bey`in 30 yıllık tecrübesini genç ve dinamik ekibimizle birleştirerek, geleneksel berberlik sanatını
+//                                 günümüzün modern ihtiyaçlarıyla harmanlıyoruz.
+//                             </p>
+//                             <p>
+//                                 İlk günden bu yana amacımız, her müşterimizin kendini özel hissetmesini sağlamak. Salonumuza giren her kişinin
+//                                 sadece görünümü değil, kendine olan güveni de yenilenerek çıkması için çalışıyoruz.
+//                             </p>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 {/* Değerlerimiz */}
+//                 <div className="px-4 md:px-32 lg:px-64 py-20">
+//                     <div className="text-center mb-16">
+//                         <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
+//                             <span className="text-amber-400">Değerlerimiz</span>
+//                         </h3>
+//                         <p className="text-gray-400 text-lg">Bizi farklı kılan değerler</p>
+//                     </div>
+
+//                     <div className="grid md:grid-cols-3 gap-8">
+//                         <motion.div
+//                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+//                             whileHover={{ y: -5 }}
+//                         >
+//                             <div className="text-amber-400 text-4xl mb-4">🎯</div>
+//                             <h4 className="text-xl font-bold text-white mb-3">Kalite</h4>
+//                             <p className="text-gray-300">
+//                                 Premium ürünler ve profesyonel ekipmanlarla, her seferinde mükemmel sonuçlar elde etmek için çalışıyoruz.
+//                             </p>
+//                         </motion.div>
+
+//                         <motion.div
+//                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+//                             whileHover={{ y: -5 }}
+//                         >
+//                             <div className="text-amber-400 text-4xl mb-4">🤝</div>
+//                             <h4 className="text-xl font-bold text-white mb-3">Güven</h4>
+//                             <p className="text-gray-300">
+//                                 Müşterilerimizle kurduğumuz uzun soluklu ilişkiler, güven ve saygı temelinde şekillenir.
+//                             </p>
+//                         </motion.div>
+
+//                         <motion.div
+//                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+//                             whileHover={{ y: -5 }}
+//                         >
+//                             <div className="text-amber-400 text-4xl mb-4">✨</div>
+//                             <h4 className="text-xl font-bold text-white mb-3">İnovasyon</h4>
+//                             <p className="text-gray-300">
+//                                 Sektördeki yenilikleri takip ederek, modern tekniklerle geleneksel ustalığı birleştiriyoruz.
+//                             </p>
+//                         </motion.div>
+//                     </div>
+//                 </div>
+
+//             </div>
+//         </>
+//     )
+// }
+
+// export default About
 "use client";
 import Image from 'next/image';
 import React from 'react';
 import { usePathname } from 'next/navigation';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 
 const About = () => {
-    const pathname = usePathname()
-    const isAboutPage = pathname === '/hakkimizda'
-    const isHomePage = pathname === '/'
+    const pathname = usePathname();
+    const isAboutPage = pathname === '/hakkimizda';
+    const isHomePage = pathname === '/';
+
+    // Her bölüm için ayrı ref'ler
+    const contentRef = useRef(null);
+    const statsRef = useRef(null);
+    const storyRef = useRef(null);
+    const valuesRef = useRef(null);
+    const titleRef = useRef(null);
+
+    // Her bölümün görünürlük durumunu takip et
+    const isContentInView = useInView(contentRef, { once: true, margin: "0px" });
+    const isStatsInView = useInView(statsRef, { once: true, margin: "-50px" });
+    const isStoryInView = useInView(storyRef, { once: true, margin: "-100px" });
+    const isValuesInView = useInView(valuesRef, { once: true, margin: "-100px" });
+    const isTitleInView = useInView(titleRef, { once: true, margin: "-50px" });
 
     const ParallaxHeroSection = () => {
         return (
             <div className='pt-[96px]'>
-                <div className='relative h-[40vh] bg-cover bg-center bg-fixed mb-16 w-full'
+                <div className='relative h-[45vh] bg-cover bg-center bg-fixed mb-16 w-full'
                     style={{ backgroundImage: "url('/images/slider/barber-service-4.jpg')" }}>
                     <div className='absolute inset-0 bg-black/50 z-10' />
                     <div className="absolute inset-0 z-20 flex items-center justify-center">
@@ -28,20 +234,24 @@ const About = () => {
                 </div>
             </div>
         );
-    }
+    };
 
     const HomeTitleSide = () => {
         return (
-            <div className="relative py-10">
-                <h1 className="text-8xl md:text-9xl font-black text-white/15 select-none tracking-wider text-center">
+            <div className='relative py-10'>
+                <div
+                    className="text-8xl md:text-9xl font-black text-white/15 select-none tracking-wider text-center"
+                >
                     Hakkımızda
-                </h1>
-                <h1 className="absolute inset-0 flex items-center justify-center text-6xl md:text-5xl font-bold text-white tracking-wide">
+                </div>
+                <div
+                    className="absolute inset-0 flex items-center justify-center text-6xl md:text-5xl font-bold text-neutral-200 tracking-wide">
                     Hakkımızda
-                </h1>
+                </div>
             </div>
-        )
-    }
+        );
+    };
+
 
     return (
         <>
@@ -54,7 +264,12 @@ const About = () => {
                     <div className='text-white flex items-center justify-center'>
                         <div className='w-full flex flex-col lg:flex-row items-center justify-center gap-12'>
                             {/* Images Section */}
-                            <div className="w-full lg:w-[45%] relative">
+                            <motion.div
+                                className="w-full lg:w-[45%] relative"
+                                initial={{ opacity: 0, x: -100 }}
+                                animate={isContentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -100 }}
+                                transition={{ duration: 0.8, ease: "easeOut" }}
+                            >
                                 <div className="relative">
                                     <div className="relative z-10">
                                         <Image
@@ -65,7 +280,12 @@ const About = () => {
                                             className='object-cover object-center rounded-lg shadow-2xl w-full h-[400px]'
                                         />
                                     </div>
-                                    <div className="absolute -bottom-8 -left-8 z-20 border-4 border-white rounded-lg overflow-hidden shadow-2xl">
+                                    <motion.div
+                                        className="absolute -bottom-8 -left-8 z-20 border-4 border-white rounded-lg overflow-hidden shadow-2xl"
+                                        initial={{ opacity: 0, scale: 0.8 }}
+                                        animate={isContentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                                    >
                                         <Image
                                             src="/images/slider/1.jpg"
                                             alt='Berber Salonu Atmosferi'
@@ -73,22 +293,43 @@ const About = () => {
                                             width={200}
                                             className='object-cover object-center w-[200px] h-[250px]'
                                         />
-                                    </div>
-                                    <div className="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"></div>
+                                    </motion.div>
+                                    <motion.div
+                                        className="absolute -top-4 -left-4 w-20 h-20 border-l-4 border-t-4 border-amber-400 rounded-tl-lg"
+                                        initial={{ opacity: 0, scale: 0 }}
+                                        animate={isContentInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                                        transition={{ duration: 0.5, ease: "easeOut", delay: 0.5 }}
+                                    ></motion.div>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Content Section */}
-                            <div className="w-full lg:w-[55%] pl-0 lg:pl-8">
+                            <motion.div
+                                ref={contentRef}
+                                className="w-full lg:w-[55%] pl-0 lg:pl-8"
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={isContentInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+                                transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                            >
                                 <div className="space-y-6">
                                     <div className="relative">
-                                        <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
+                                        <motion.h2
+                                            className="text-4xl lg:text-5xl font-bold leading-tight"
+                                            initial={{ opacity: 0, y: 30 }}
+                                            animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
+                                        >
                                             Geleneksel Ustalık,
                                             <span className="text-amber-400"> Modern Yaklaşım</span>
-                                        </h2>
+                                        </motion.h2>
                                     </div>
 
-                                    <div className="space-y-4 text-gray-300 leading-relaxed">
+                                    <motion.div
+                                        className="space-y-4 text-gray-300 leading-relaxed"
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={isContentInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+                                    >
                                         <p className="text-lg">
                                             15 yılı aşkın deneyimimizle, saç kesimi ve bakım konusunda
                                             kendimizi sürekli geliştiriyoruz. Her müşterimize özel yaklaşım
@@ -100,56 +341,101 @@ const About = () => {
                                             size en uygun görünümü yakalıyoruz. Hijyen ve kalite standartlarımız
                                             ile güvenli bir ortamda hizmet veriyoruz.
                                         </p>
-                                    </div>
+                                    </motion.div>
 
-                                    <div className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700">
-                                        <div>
+                                    <motion.div
+                                        ref={statsRef}
+                                        className="grid grid-cols-2 gap-6 mt-8 pt-6 border-t border-gray-700"
+                                        initial={{ opacity: 0, y: 30 }}
+                                        animate={isStatsInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                                        transition={{ duration: 0.6, ease: "easeOut" }}
+                                    >
+                                        <motion.div
+                                            className="flex flex-col"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={isStatsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+                                        >
                                             <h4 className="text-2xl font-bold text-amber-400">15+</h4>
                                             <p className="text-sm text-gray-400 uppercase tracking-wide">Yıl Deneyim</p>
-                                        </div>
-                                        <div>
+                                        </motion.div>
+                                        <motion.div
+                                            className="flex flex-col"
+                                            initial={{ opacity: 0, scale: 0.8 }}
+                                            animate={isStatsInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+                                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
+                                        >
                                             <h4 className="text-2xl font-bold text-amber-400">1000+</h4>
                                             <p className="text-sm text-gray-400 uppercase tracking-wide">Mutlu Müşteri</p>
-                                        </div>
-                                    </div>
+                                        </motion.div>
+                                    </motion.div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
 
                 {/* Hikayemiz Bölümü */}
-                <div className="px-4 md:px-32 lg:px-64 py-20 bg-gray-800">
+                <motion.div
+                    ref={storyRef}
+                    className="px-4 md:px-32 lg:px-64 py-20  bg-gradient-to-b from-gray-800 to-gray-900 relative overflow-hidden"
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={isStoryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
                     <div className="max-w-4xl mx-auto text-center">
-                        <h3 className="text-3xl lg:text-4xl font-bold text-white mb-8">
+                        <motion.h3
+                            className="text-3xl lg:text-4xl font-bold text-white mb-8"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={isStoryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+                        >
                             <span className="text-amber-400">Hikayemiz</span>
-                        </h3>
-                        <div className="text-gray-300 space-y-6 text-lg leading-relaxed">
+                        </motion.h3>
+                        <motion.div
+                            className="text-gray-300 space-y-6 text-lg leading-relaxed"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={isStoryInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+                            transition={{ duration: 0.8, ease: "easeOut", delay: 0.5 }}
+                        >
                             <p>
                                 2008 yılında büyük bir tutkuyla başladığımız bu yolculuk, sadece saç kesmekten çok daha fazlasını ifade ediyor.
-                                Usta Mehmet Bey`in 30 yıllık tecrübesini genç ve dinamik ekibimizle birleştirerek, geleneksel berberlik sanatını
+                                Usta Mehmet Bey&apos;in 30 yıllık tecrübesini genç ve dinamik ekibimizle birleştirerek, geleneksel berberlik sanatını
                                 günümüzün modern ihtiyaçlarıyla harmanlıyoruz.
                             </p>
                             <p>
                                 İlk günden bu yana amacımız, her müşterimizin kendini özel hissetmesini sağlamak. Salonumuza giren her kişinin
                                 sadece görünümü değil, kendine olan güveni de yenilenerek çıkması için çalışıyoruz.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Değerlerimiz */}
                 <div className="px-4 md:px-32 lg:px-64 py-20">
-                    <div className="text-center mb-16">
+                    <motion.div
+                        className="text-center mb-16"
+                        initial={{ opacity: 0, y: 50 }}
+                        animate={isValuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                    >
                         <h3 className="text-3xl lg:text-4xl font-bold text-white mb-4">
                             <span className="text-amber-400">Değerlerimiz</span>
                         </h3>
-                        <p className="text-gray-400 text-lg">Bizi farklı kılan değerler</p>
-                    </div>
+                        <p className="text-gray-400 text-lg">
+                            Bizi farklı kılan değerler
+                        </p>
+                    </motion.div>
 
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <motion.div
+                        ref={valuesRef}
+                        className="grid md:grid-cols-3 gap-8"
+                    >
                         <motion.div
                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isValuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
                             whileHover={{ y: -5 }}
                         >
                             <div className="text-amber-400 text-4xl mb-4">🎯</div>
@@ -161,6 +447,9 @@ const About = () => {
 
                         <motion.div
                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isValuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.4 }}
                             whileHover={{ y: -5 }}
                         >
                             <div className="text-amber-400 text-4xl mb-4">🤝</div>
@@ -172,6 +461,9 @@ const About = () => {
 
                         <motion.div
                             className="bg-gray-800 p-8 rounded-lg border border-gray-700 hover:border-amber-400 transition-all duration-300"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={isValuesInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: 0.6 }}
                             whileHover={{ y: -5 }}
                         >
                             <div className="text-amber-400 text-4xl mb-4">✨</div>
@@ -180,12 +472,12 @@ const About = () => {
                                 Sektördeki yenilikleri takip ederek, modern tekniklerle geleneksel ustalığı birleştiriyoruz.
                             </p>
                         </motion.div>
-                    </div>
+                    </motion.div>
                 </div>
 
             </div>
         </>
-    )
-}
+    );
+};
 
-export default About
+export default About;

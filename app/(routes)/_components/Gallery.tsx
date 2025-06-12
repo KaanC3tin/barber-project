@@ -10,7 +10,7 @@ interface GalleryProps {
 const Gallery = ({ gallery }: GalleryProps) => {
     return (
         <div className='min-h-screen pt-[96px]'>
-            <div className='relative w-full h-[40vh] bg-center bg-cover bg-fixed mb-16'
+            <div className='relative w-full h-[45vh] bg-center bg-cover bg-fixed mb-16'
                 style={{ backgroundImage: "url('/images/slider/barber-service-1.jpg')" }}>
                 <div className='absolute inset-0 bg-black/50 z-10' />
                 <div className="absolute inset-0 z-20 flex items-center justify-center">

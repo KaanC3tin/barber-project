@@ -54,10 +54,9 @@ const ContactForm = () => {
     return (
         // ÇÖZÜM 1: min-h-screen + flex kullan
         <div className="min-h-screen flex flex-col">
-
             {/* Hero Section */}
             <div className="pt-[96px] flex-shrink-0">
-                <div className='relative w-full h-[40vh] bg-cover bg-center bg-fixed'
+                <div className='relative w-full h-[45vh] bg-contain bg-fixed'
                     style={{ backgroundImage: "url('/images/slider/contact-hero-section.jpg')" }}>
                     <div className='absolute inset-0 bg-black/50 z-10' />
                     <div className="absolute inset-0 z-20 flex items-center justify-center">

@@ -8,6 +8,8 @@ import React from 'react'
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Poppins } from 'next/font/google';
+import { motion } from 'framer-motion';
+
 
 const usePoppins = Poppins({
     subsets: ['latin'],
@@ -41,18 +43,29 @@ const Hero = ({ slider }: HeroProps) => {
                 <CarouselContent className="h-screen">
                     {slider.map((slide, index) => (
                         <CarouselItem key={index} className="h-screen">
-                            <div className='h-full w-full relative'>
+                            <motion.div
+                                initial={{ opacity: 0, y: -50 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1, easy: 'easeOut' }}
+                                className='h-full w-full relative'
+                            >
                                 <Image
                                     alt={slide.title}
                                     src={slide.image || ''}
                                     fill
+                                    priority
                                     className="object-cover"
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 80vw"
                                 />
                                 {/* Her slide için overlay */}
                                 <div className="absolute inset-0 bg-black/40" />
                                 <div className="absolute inset-0 flex items-center justify-center">
-                                    <div className='space-y-2.5 text-white max-w-4xl px-4'>
+                                    <motion.div
+                                        className='space-y-2.5 text-white max-w-4xl px-4'
+                                        initial={{ opacity: 0, y: -50 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 1, easy: 'easeOut' }}
+                                    >
                                         <h2 className='text-xl md:text-2xl  text-amber-500 font-light'>
                                             {slide.subTitle}
                                         </h2>
@@ -74,9 +87,9 @@ const Hero = ({ slider }: HeroProps) => {
                                                 </Link>
                                             ))}
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 </div>
-                            </div>
+                            </motion.div>
                         </CarouselItem>
                     ))}
                 </CarouselContent>

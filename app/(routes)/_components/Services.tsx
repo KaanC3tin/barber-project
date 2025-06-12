@@ -12,7 +12,7 @@ const Services = ({ services }: ServiceProps) => {
     return (
         <div className="min-h-screen pt-[96px]">
             {/* Hero Section */}
-            <div className='relative w-full h-[50vh] bg-fixed bg-center bg-cover mb-16'
+            <div className='relative w-full h-[45vh] bg-fixed bg-center bg-cover mb-16'
                 style={{ backgroundImage: "url('/images/slider/barber-service-3.jpg')" }}>
 
                 {/* <Image
