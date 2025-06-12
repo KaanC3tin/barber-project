@@ -206,14 +206,14 @@ const About = () => {
     const statsRef = useRef(null);
     const storyRef = useRef(null);
     const valuesRef = useRef(null);
-    const titleRef = useRef(null);
+    // const titleRef = useRef(null);
 
     // Her bölümün görünürlük durumunu takip et
     const isContentInView = useInView(contentRef, { once: true, margin: "0px" });
     const isStatsInView = useInView(statsRef, { once: true, margin: "-50px" });
     const isStoryInView = useInView(storyRef, { once: true, margin: "-100px" });
     const isValuesInView = useInView(valuesRef, { once: true, margin: "-100px" });
-    const isTitleInView = useInView(titleRef, { once: true, margin: "-50px" });
+    // const isTitleInView = useInView(titleRef, { once: true, margin: "-50px" });
 
     const ParallaxHeroSection = () => {
         return (
