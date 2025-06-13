@@ -40,7 +40,7 @@ const Hero = ({ slider }: HeroProps) => {
                 }}
                 className="w-full h-screen relative"
             >
-                <CarouselContent className="h-screen">
+                <CarouselContent className="h-screen -z-10">
                     {slider.map((slide, index) => (
                         <CarouselItem key={index} className="h-screen">
                             <motion.div
@@ -93,8 +93,8 @@ const Hero = ({ slider }: HeroProps) => {
                         </CarouselItem>
                     ))}
                 </CarouselContent>
-                <CarouselPrevious className='absolute left-7 bg-white/50 hover:bg-white/60 border-white/30 text-black' />
-                <CarouselNext className='absolute right-7 bg-white/50 hover:bg-white/60 border-white/30 text-black' />
+                <CarouselPrevious className='absolute left-7 bg-gray-950 hover:bg-gray-800 border-white/30 text-white hover:text-white/80 z-20' />
+                <CarouselNext className='absolute right-7 bg-gray-950 hover:bg-gray-800 border-white/30 text-white hover:text-white/80 z-20' />
             </Carousel>
         </div>
     )
